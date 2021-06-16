@@ -1,0 +1,115 @@
+<%- include('../header'); -%>
+<style type="text/css">
+  /* component */
+
+.star-rating {
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  padding:0 .2em;
+  text-align:center;
+  width:5em;
+  height: 30px;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color: #fc0;
+  cursor:pointer;
+}
+
+.star-rating :checked ~ label {
+  color:orangered;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:orange;
+}
+
+
+</style>
+<main id="main">
+
+    <!-- ======= Register Section ======= -->
+    <section id="contact" class="contact section-bg">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Write your review</h2>
+            <p></p>
+  
+          </div>
+  
+          <div class="row">
+  
+            <div class="col-lg-4">
+              <div class="info d-flex flex-column justify-content-center" data-aos="fade-right">
+                <div class="address">
+                  <i class="icofont-google-map"></i>
+                  <h4>Location:</h4>
+                  <p>NIT Silchar<br>India, IN 788010</p>
+                </div>
+  
+                <div class="email">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>contact@green.com</p>
+                </div>
+  
+                <div class="phone">
+                  <i class="icofont-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 55</p>
+                </div>
+  
+              </div>
+  
+            </div>
+            
+
+  
+            <div class="col-lg-8 mt-5 mt-lg-0">
+  
+                <form action="/biodegradable/review/<%= q %>" method="POST">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">User Name</label>
+                      <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Write your review</label>
+                        <textarea class="form-control" name="review" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Give your Rating</label>
+                      <div class="star-rating">
+                        <input type="radio" id="5-stars" name="rating" value="5" />
+                        <label for="5-stars" class="star">&#9733;</label>
+                        <input type="radio" id="4-stars" name="rating" value="4" />
+                        <label for="4-stars" class="star">&#9733;</label>
+                        <input type="radio" id="3-stars" name="rating" value="3" />
+                        <label for="3-stars" class="star">&#9733;</label>
+                        <input type="radio" id="2-stars" name="rating" value="2" />
+                        <label for="2-stars" class="star">&#9733;</label>
+                        <input type="radio" id="1-star" name="rating" value="1" />
+                        <label for="1-star" class="star">&#9733;</label>
+                      </div>
+                  </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+    
+
+</main><!-- End #main -->
+
+<%- include('../footer'); -%>
